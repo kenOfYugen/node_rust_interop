@@ -1,0 +1,25 @@
+{
+  "name": "concurrent_parallelism",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "coffee -b --no-header -o build -c src/",
+    "bench": "npm run build && UV_THREADPOOL_SIZE=8 node build/run-benchmark.js",
+    "getRamCPU": "cd bench && coffee -b --no-header -c *.coffee && UV_THREADPOOL_SIZE=8 sudo node benchmark.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "coffeescript": "^1.12.6",
+    "node-gyp": "^3.6.1"
+  },
+  "dependencies": {
+    "bindings": "^1.2.1",
+    "ffi": "^2.2.0",
+    "nan": "^2.6.2"
+  }
+}

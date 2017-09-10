@@ -1,0 +1,13 @@
+[package]
+name = "pi_est_c_wrapper"
+version = "0.1.0"
+authors = ["ken <kenzone@gmail.com>"]
+
+[dependencies.pi_est]
+path = "../pi_est"
+
+[dependencies]
+libc = "*"
+
+[lib]
+crate-type = ["cdylib"]
